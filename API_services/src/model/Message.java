@@ -1,24 +1,22 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement (name="msg") // sending xml
 public class Message {
-	private String id;
+	private int id;
 	private String timestamp;
 	private String topic_ID;
 	private String sender_ID;
 	private String content;
 	
-	public Message(String id, String timestamp, String topic_ID, String sender_ID, String content) {
-		super();
-		this.id = id;
-		this.timestamp = timestamp;
-		this.topic_ID = topic_ID;
-		this.sender_ID = sender_ID;
-		this.content = content;
-	}
-	public String getId() {
+
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getTimestamp() {
@@ -46,5 +44,10 @@ public class Message {
 		this.content = content;
 	}
 
+	 
+	@Override
+	public String toString(){
+		return id+"::"+timestamp+"::"+topic_ID+"::"+sender_ID+"::"+content;
+	}
 
 }
