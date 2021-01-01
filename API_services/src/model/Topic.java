@@ -1,8 +1,14 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement (name="topic") // sending xml
 public class Topic {
     private String id;
     private String username;
+    public Topic() {
+    	
+    }
 	public String getId() {
 		return id;
 	}
@@ -20,5 +26,9 @@ public class Topic {
 		this.id = id;
 		this.username = username;
 	}
-    
+	
+	@Override
+	public String toString(){
+		return id+"::"+username;
+	}
 }

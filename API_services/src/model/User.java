@@ -1,5 +1,8 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement (name="user") // sending xml
 public class User {
     private String id;
     private String username;
@@ -22,4 +25,7 @@ public class User {
 		this.username = username;
 	}
     
+	public String toString(){
+		return id+"::"+username;
+	}
 }
